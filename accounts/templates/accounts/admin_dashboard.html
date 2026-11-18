@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrator Dashboard | AlisTo</title>
+</head>
+<body>
+
+    <h1>Administrator Dashboard</h1>
+
+    <p>Welcome, {{ request.user.username }}!</p>
+
+    <p>You are logged in as an Administrator.</p>
+
+    <h3>AlisTo Administration</h3>
+
+    <ul>
+        <li>Monitor student SOS alerts</li>
+        <li>Manage student records</li>
+        <li>Review emergency alert history</li>
+        <li>Generate system reports</li>
+    </ul>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+    </form>
+
+</body>
+</html>

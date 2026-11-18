@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard | AlisTo</title>
+</head>
+<body>
+
+    <h1>Student Dashboard</h1>
+
+    <p>Welcome, {{ request.user.username }}!</p>
+
+    <p>You are logged in as a Student.</p>
+
+    <h3>AlisTo Student Features</h3>
+
+    <ul>
+        <li>Manage your student profile</li>
+        <li>Manage emergency contacts</li>
+        <li>Access the SOS alert system</li>
+        <li>View your alert history</li>
+    </ul>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+    </form>
+
+</body>
+</html>

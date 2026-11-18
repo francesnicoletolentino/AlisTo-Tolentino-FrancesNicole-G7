@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AlisTo Account</title>
+</head>
+<body>
+
+    <h1>Welcome to AlisTo!</h1>
+
+    <p>You are logged in as {{ request.user.username }}.</p>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+    </form>
+
+</body>
+</html>

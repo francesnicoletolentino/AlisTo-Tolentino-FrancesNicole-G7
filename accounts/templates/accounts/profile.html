@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | AlisTo</title>
+</head>
+<body>
+
+    <h1>My Profile</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Account Information</h2>
+        {{ user_form.as_p }}
+
+        {% if student_form %}
+            <h2>Student Information</h2>
+            {{ student_form.as_p }}
+        {% endif %}
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <p>
+        <a href="{% url 'account_home' %}">Back to Dashboard</a>
+    </p>
+
+</body>
+</html>
